@@ -1,25 +1,21 @@
-## React Fluid Container
+## React Fluid Container for Typescript
 
-[![npm version](https://badge.fury.io/js/react-fluid-container.svg)](https://badge.fury.io/js/react-fluid-container)
-[![Dependency Status](https://david-dm.org/souporserious/react-fluid-container.svg)](https://david-dm.org/souporserious/react-fluid-container)
+[![npm version](https://badge.fury.io/js/react-fluid-container-typescript.svg)](https://badge.fury.io/js/react-fluid-container-typescript)
+[![Dependency Status](https://david-dm.org/souporserious/react-fluid-container-typescript.svg)](https://david-dm.org/souporserious/react-fluid-container-typescript)
+
+Fork of [react-fluid-container](https://github.com/souporserious/react-fluid-container)
 
 Graceful dynamic/variable height animation.
 
+This fork works with React 16 and contains Typescript typings in case you needed one. 
+It works only as a module, though let's face it - who doesn't use bundlers these days :wink:
+
 ## Install
 
-`npm install react-fluid-container --save`
-
-```html
-<script src="https://unpkg.com/react-fluid-container-typescript/build/browser/index.js"></script>
-(UMD library exposed as `ReactFluidContainer`)
-```
-
-### Example
-
-[Codepen Demo](http://codepen.io/souporserious/pen/akjyWv)
+`npm install react-fluid-container-typescript --save`
 
 ```js
-import FluidContainer from 'react-fluid-container'
+import { FluidContainer } from 'react-fluid-container-typescript'
 
 class App extends Component {
   constructor() {
@@ -53,46 +49,26 @@ class App extends Component {
 
 ## Props
 
-#### `tag`: PropTypes.string
+#### `tag`: string
 
 The wrapping element around your only `child` element. Defaults to `div`. Any other valid props like `className` will be passed to this element.
 
-#### `height`: PropTypes.oneOf(['auto', PropTypes.number])
+#### `height`: 'auto' | number
 
 The height value you want to animate to. Defaults to `auto`.
 
-#### `rmConfig`: React.PropTypes.objectOf(React.PropTypes.number)
+#### `rmConfig`: { val: number; stiffness: number; damping: number; precision: number; }
 
 Pass in any valid [React Motion config object](https://github.com/chenglou/react-motion#--spring-val-number-config-springhelperconfig--opaqueconfig).
 
-#### `children`: PropTypes.node.isRequired (only one child allowed)
+#### `children`: React.ReactNode
 
 Only one child is allowed and is what the measurements will be based off of. This should be considered a pretty "dumb" element that is just a wrapper to measure off of. Make sure there are no margins are "hanging" outside of your elements. You can use 1px padding to avoid this.
 
-#### `beforeAnimation`: PropTypes.func(currentHeight, nextHeight)
+#### `beforeAnimation`: (currentHeight: number, nextHeight: number) => void;
 
 Callback before animation has started. Passes in previous and next heights.
 
-#### `afterAnimation`: PropTypes.func
+#### `afterAnimation`: () => void
 
 Callback after animation has completed.
-
-## Running Locally
-
-clone repo
-
-`git clone git@github.com:souporserious/react-fluid-container.git`
-
-move into folder
-
-`cd ~/react-fluid-container`
-
-install dependencies
-
-`npm install`
-
-run dev mode
-
-`npm run dev`
-
-open your browser and visit: `http://localhost:8080/`

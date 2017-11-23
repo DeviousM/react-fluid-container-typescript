@@ -1,1 +1,1 @@
-export * from './lib/fluidContainer';
+export * from './fluidContainer';

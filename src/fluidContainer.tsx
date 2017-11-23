@@ -7,7 +7,7 @@ export interface FluidContainerProps {
   height?: 'auto' | number;
   children?: React.ReactNode;
   className?: string;
-  rmConfig: OpaqueConfig,
+  rmConfig?: OpaqueConfig,
   beforeAnimation?: (currentHeight: number, nextHeight: number) => void;
   afterAnimation?: () => void;
   style?: CSSStyleDeclaration;
@@ -17,7 +17,7 @@ export interface FluidContainerState {
   height: number;
 }
 
-export default class FluidContainer extends React.Component<FluidContainerProps, FluidContainerState> {
+export class FluidContainer extends React.Component<FluidContainerProps, FluidContainerState> {
   state = {
     height: 0,
   }
@@ -111,8 +111,8 @@ export default class FluidContainer extends React.Component<FluidContainerProps,
         style={{
           _height: spring(rmHeight!, { 
             precision: 0.5, 
-            damping: rmConfig.damping,
-            stiffness: rmConfig.stiffness
+            damping: rmConfig!.damping,
+            stiffness: rmConfig!.stiffness
           }),
         }}
         onRest={this._handleRest}

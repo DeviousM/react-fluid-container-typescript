@@ -1,5 +1,5 @@
 {
-  "name": "react-fluid-container",
+  "name": "react-fluid-container-typescript",
   "version": "0.6.1",
   "description": "Graceful dynamic/variable height animation.",
   "main": "build/main/index.js",
@@ -33,7 +33,9 @@
     "docs:publish": "yarn docs:html && gh-pages -d build/docs",
     "changelog": "standard-version",
     "release": "yarn reset && yarn test && yarn docs:publish && yarn changelog",
-    "reset": "git clean -dfx && git reset --hard && yarn"
+    "reset": "git clean -dfx && git reset --hard && yarn",
+    "build:dev": "rollup -c ./example/rollup.config.js -o ./example/src/test.tsx && cpy example/src/index.html example/build/",
+    "dev": "http-server -c-1 ./example/build/ -o"
   },
   "scripts-info": {
     "info": "Display information about the scripts",
@@ -74,7 +76,11 @@
     "tslint": "^5.4.3",
     "tslint-config-standard": "^6.0.1",
     "typedoc": "^0.8.0",
-    "typescript": "^2.4.1"
+    "typescript": "^2.4.1",
+    "react-aria": "^0.9.2",
+    "cpy-cli": "^1.0.1",
+    "http-server": "^0.9.0",
+    "rollup-plugin-typescript": "^0.8.1"
   },
   "keywords": [
     "react",
