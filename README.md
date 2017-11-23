@@ -1,7 +1,7 @@
 ## React Fluid Container for Typescript
 
 [![npm version](https://badge.fury.io/js/react-fluid-container-typescript.svg)](https://badge.fury.io/js/react-fluid-container-typescript)
-[![Dependency Status](https://david-dm.org/souporserious/react-fluid-container-typescript.svg)](https://david-dm.org/souporserious/react-fluid-container-typescript)
+[![Dependency Status](https://david-dm.org/souporserious/react-fluid-container-typescript.svg)](https://david-dm.org/DeviousM/react-fluid-container-typescript)
 
 Fork of [react-fluid-container](https://github.com/souporserious/react-fluid-container)
 
