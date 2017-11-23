@@ -12,7 +12,7 @@
     "listFiles": false,
     "traceResolution": false,
     "pretty": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": false,
     "noUnusedLocals": true,
     "lib" : [
       "es6",

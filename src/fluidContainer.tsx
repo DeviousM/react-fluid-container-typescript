@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Motion, spring, presets, OpaqueConfig } from 'react-motion';
 import Measure, { ContentRect } from 'react-measure';
 
